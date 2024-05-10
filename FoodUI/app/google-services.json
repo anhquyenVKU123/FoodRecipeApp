@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "239625456104",
+    "project_id": "doancoso3-e8a56",
+    "storage_bucket": "doancoso3-e8a56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239625456104:android:7fc02ed5d6351e620f7c5d",
+        "android_client_info": {
+          "package_name": "com.example.thigiuaki"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBitycX4SvNgccUuHBltWQ_Bmngl4bqks4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
