@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "118373033726",
+    "project_id": "nhucc-a571e",
+    "storage_bucket": "nhucc-a571e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118373033726:android:88e01869c0e13e7e9627af",
+        "android_client_info": {
+          "package_name": "com.example.ok"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv04joE6X6PAZm_egtqzzuClMMEu30tmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
