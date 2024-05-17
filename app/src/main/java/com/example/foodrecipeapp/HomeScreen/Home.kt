@@ -86,7 +86,7 @@ class Home : ComponentActivity() {
 }
 
 @Composable
-fun GUI_Home(onButtonClick: () -> Unit) {
+fun GUI_Home() {
     val ScrollState = rememberScrollState()
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -367,12 +367,6 @@ fun GUI_Home(onButtonClick: () -> Unit) {
 
 @Composable
 fun MyApp() {
-    val navController = rememberNavController()
-
-    NavHost(navController = navController, startDestination = "Home") {
-        composable("Home") { GUI_Home(onButtonClick = { navController.navigate("StartScreen") }) }
-        composable("StartScreen") { StartScreen(onButtonClick = {navController.navigate("Home")}) }
-    }
 }
 @Preview(showBackground = true)
 @Composable

@@ -7,4 +7,6 @@
     <string name="title_activity_avatar_dish">avatar_dish</string>
     <string name="title_activity_new_recipe">NewRecipe</string>
     <string name="title_activity_navigation_bar">NavigationBar</string>
+    <string name="title_activity_sigin_form">SiginForm</string>
+    <string name="title_activity_login_form">LoginForm</string>
 </resources>

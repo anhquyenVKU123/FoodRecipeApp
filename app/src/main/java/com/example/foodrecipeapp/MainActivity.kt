@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -41,11 +42,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.foodrecipeapp.HomeScreen.GUI_Home
 import com.example.foodrecipeapp.HomeScreen.Home
+import com.example.foodrecipeapp.LoginScreen.GUI_Login
+import com.example.foodrecipeapp.SiginScreen.GUI_Register
 
 
 class MainActivity : ComponentActivity() {
@@ -66,7 +70,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun StartScreen(onButtonClick: () -> Unit) {
+fun StartScreen(navController: NavHostController) {
     val backgroundPainter: Painter = painterResource(R.drawable.image_1)
     val image_2 : Painter = painterResource(R.drawable.image_2)
     Box(modifier = Modifier.fillMaxSize()) {
@@ -116,14 +120,14 @@ fun StartScreen(onButtonClick: () -> Unit) {
                     )
                 }
             }
-            Box(
+            Column(
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxWidth()
                     .wrapContentSize()
             ) {
                 Button(
-                    onClick = onButtonClick,
+                    onClick = {navController.navigate("Home")},
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(64.dp),
@@ -136,6 +140,21 @@ fun StartScreen(onButtonClick: () -> Unit) {
                         style = TextStyle(fontSize = 24.sp)
                     )
                 }
+                Spacer(modifier = Modifier.height(16.dp))
+                Button(
+                    onClick = {navController.navigate("Login")},
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(64.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        Color(18,149,117)
+                    )
+                ){
+                    Text(
+                        text = "Login",
+                        style = TextStyle(fontSize = 24.sp)
+                    )
+                }
             }
         }
     }
@@ -145,9 +164,10 @@ fun MyApp() {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "StartScreen") {
-        composable("StartScreen") { StartScreen(onButtonClick = { navController.navigate("Home") }) }
-        composable("Home") { GUI_Home(onButtonClick = { navController.navigate("StartScreen") })}
-
+        composable("StartScreen") { StartScreen(navController) }
+        composable("Home") { GUI_Home() }
+        composable("Login") { GUI_Login(navController)}
+        composable("Register") { GUI_Register(navController) }
     }
 }
 @Preview(showBackground = true)
